@@ -1,0 +1,67 @@
+<div *ngIf="!pais; else divPais"
+     class="alert alert-info animate__animated animate__fadeIn animate__faster">
+    Espere por favor...
+</div>
+
+<ng-template #divPais>
+    <div class="row animate__animated animate__fadeIn animate__faster">
+        <div class="col-12">
+            <h1>País: <small>{{ pais.name.common }}</small></h1>
+        </div>
+    </div>
+
+    <div class="row animate__animated animate__fadeIn animate__faster">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="pais.flags[0]" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Población</strong> {{ pais.population | number }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Código numérico</strong> {{ pais.ccn3 }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Código alpha3</strong> {{ pais.cca3 }}
+                </li>                                
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="animate__animated animate__fadeIn animate__faster">Traducciones</h3>
+
+    <div class="row animate__animated animate__fadeIn animate__faster">
+        <div class="col">
+            <span class="badge bg-primary me-2">{{ pais.translations.ara.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.ces.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.cym.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.deu.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.est.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.fin.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.fra.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.hrv.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.hun.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.ita.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.jpn.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.kor.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.nld.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.per.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.pol.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.por.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.rus.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.slk.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.spa.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.swe.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.urd.official }}</span>
+            <span class="badge bg-primary me-2">{{ pais.translations.zho.official }}</span>
+        </div>
+    </div>
+
+    <!-- <pre class="mt-5">
+        {{ pais | json }}
+    </pre> -->
+
+</ng-template>
